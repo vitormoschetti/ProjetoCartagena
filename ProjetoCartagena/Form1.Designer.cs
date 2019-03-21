@@ -65,7 +65,9 @@
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.btnExibirTabuleiro = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
-            this.lstTabuleiro = new System.Windows.Forms.ListBox();
+            this.lstTabuleiro = new System.Windows.Forms.ListView();
+            this.colPos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -408,7 +410,7 @@
             // lblVersao
             // 
             this.lblVersao.AutoSize = true;
-            this.lblVersao.Location = new System.Drawing.Point(1272, 601);
+            this.lblVersao.Location = new System.Drawing.Point(1283, 631);
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(53, 17);
             this.lblVersao.TabIndex = 37;
@@ -416,12 +418,25 @@
             // 
             // lstTabuleiro
             // 
-            this.lstTabuleiro.FormattingEnabled = true;
-            this.lstTabuleiro.ItemHeight = 16;
+            this.lstTabuleiro.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colPos,
+            this.colCarta});
             this.lstTabuleiro.Location = new System.Drawing.Point(1114, 102);
             this.lstTabuleiro.Name = "lstTabuleiro";
-            this.lstTabuleiro.Size = new System.Drawing.Size(211, 452);
+            this.lstTabuleiro.Size = new System.Drawing.Size(211, 516);
             this.lstTabuleiro.TabIndex = 38;
+            this.lstTabuleiro.UseCompatibleStateImageBehavior = false;
+            this.lstTabuleiro.View = System.Windows.Forms.View.Details;
+            // 
+            // colPos
+            // 
+            this.colPos.Text = "Pos";
+            this.colPos.Width = 73;
+            // 
+            // colCarta
+            // 
+            this.colCarta.Text = "Carta";
+            this.colCarta.Width = 150;
             // 
             // Form1
             // 
@@ -512,7 +527,9 @@
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.Button btnExibirTabuleiro;
         private System.Windows.Forms.Label lblVersao;
-        private System.Windows.Forms.ListBox lstTabuleiro;
+        private System.Windows.Forms.ListView lstTabuleiro;
+        private System.Windows.Forms.ColumnHeader colPos;
+        private System.Windows.Forms.ColumnHeader colCarta;
     }
 }
 

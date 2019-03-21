@@ -95,7 +95,49 @@ namespace ProjetoCartagena
 
         private void btnExibirTabuleiro_Click(object sender, EventArgs e)
         {
+            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
+            tabuleiro = tabuleiro.Replace("\n", "");
+            string[] posicoes = tabuleiro.Split('\r');
+            for(int i = 0; i < posicoes.Length; i++)
+            {
+                string[] linha = posicoes[i].Split(',');
+                if (i > 0 && i < posicoes.Length-1)
+                {
+                    linha[1] = editarNome("" + linha[1]);
+                }
+                ListViewItem listView = new ListViewItem(linha);
+                lstTabuleiro.Items.Add(listView);
+            }
+        }
 
+        private string editarNome(string v)
+        {
+            if (v.Equals("F"))
+            {
+                return v.Replace("F", "Faca");
+            }
+            if (v.Equals("E"))
+            {
+                return v.Replace("E", "Esqueleto");
+            }
+            if (v.Equals("C"))
+            {
+                return v.Replace("C", "Chave");
+            }
+            if (v.Equals("P"))
+            {
+                return v.Replace("P", "Pistola");
+            }
+            if (v.Equals("T"))
+            {
+                return v.Replace("T", "Tricornio");
+            }
+            if (v.Equals("G"))
+            {
+                return v.Replace("G", "Garrafa");
+            }
+
+            return "";
         }
     }
 }

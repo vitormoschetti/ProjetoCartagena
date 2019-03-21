@@ -10,3 +10,15 @@ C:\Users\Ygor\source\repos\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCa
 C:\Users\Ygor\source\repos\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
 C:\Users\Ygor\source\repos\ProjetoCartagena\ProjetoCartagena\bin\Debug\CartagenaServer.dll
 C:\Users\Ygor\source\repos\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe.config
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.pdb
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\bin\Debug\CartagenaServer.dll
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csprojAssemblyReference.cache
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Properties.Resources.resources
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.GenerateResource.cache
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CoreCompileInputs.cache
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
+C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
