@@ -132,6 +132,7 @@
             this.txtSenhaPartida.Name = "txtSenhaPartida";
             this.txtSenhaPartida.Size = new System.Drawing.Size(96, 22);
             this.txtSenhaPartida.TabIndex = 6;
+            this.txtSenhaPartida.UseSystemPasswordChar = true;
             // 
             // btnCriarPartida
             // 
@@ -244,6 +245,7 @@
             // txtIdJogador
             // 
             this.txtIdJogador.Location = new System.Drawing.Point(308, 461);
+            this.txtIdJogador.MaxLength = 20;
             this.txtIdJogador.Name = "txtIdJogador";
             this.txtIdJogador.Size = new System.Drawing.Size(75, 22);
             this.txtIdJogador.TabIndex = 19;
@@ -251,9 +253,11 @@
             // txtSenhaJogador
             // 
             this.txtSenhaJogador.Location = new System.Drawing.Point(419, 461);
+            this.txtSenhaJogador.MaxLength = 10;
             this.txtSenhaJogador.Name = "txtSenhaJogador";
             this.txtSenhaJogador.Size = new System.Drawing.Size(100, 22);
             this.txtSenhaJogador.TabIndex = 20;
+            this.txtSenhaJogador.UseSystemPasswordChar = true;
             // 
             // label8
             // 
@@ -266,6 +270,7 @@
             // 
             // txtCorJogador
             // 
+            this.txtCorJogador.Enabled = false;
             this.txtCorJogador.Location = new System.Drawing.Point(305, 568);
             this.txtCorJogador.Name = "txtCorJogador";
             this.txtCorJogador.Size = new System.Drawing.Size(100, 22);
