@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="CartagenaServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\3 Semestre Senac\Orientacao a Objetos e PI\CartagenaServer.dll</HintPath>
+      <HintPath>..\..\..\CartagenaServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,6 +56,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Jogador.cs" />
+    <Compile Include="model\Partida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
