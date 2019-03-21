@@ -71,7 +71,7 @@ namespace ProjetoCartagena
 
         private void btnJogarFrente_Click(object sender, EventArgs e)
         {
-
+      
         }
 
         private void btnJogarTras_Click(object sender, EventArgs e)
@@ -81,11 +81,23 @@ namespace ProjetoCartagena
 
         private void btnPularJogador_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnExibirMao_Click(object sender, EventArgs e)
         {
-
+            string mao = Jogo.ConsultarMao(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
+            mao = mao.Replace("\n", "");
+            string[] cartas = mao.Split('\r');
+            foreach (string carta in cartas) 
+            {
+                string[] linha = carta.Split(',');
+                if (linha.Length > 1)
+                {
+                    linha[0] = editarNome(linha[0]);
+                    lstMaoJogador.Items.Add("Voce tem " + linha[1] + " cartas de " + linha[0]);
+                }
+            }
         }
 
         private void btnVerificarVez_Click(object sender, EventArgs e)
@@ -101,7 +113,7 @@ namespace ProjetoCartagena
             for(int i = 0; i < posicoes.Length; i++)
             {
                 string[] linha = posicoes[i].Split(',');
-                if (i > 0 && i < posicoes.Length-1)
+                if (i > 0 && i < posicoes.Length - 1)
                 {
                     linha[1] = editarNome("" + linha[1]);
                 }

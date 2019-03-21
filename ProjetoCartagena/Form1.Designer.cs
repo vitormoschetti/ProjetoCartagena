@@ -259,7 +259,6 @@
             this.txtSenhaJogador.Name = "txtSenhaJogador";
             this.txtSenhaJogador.Size = new System.Drawing.Size(100, 22);
             this.txtSenhaJogador.TabIndex = 20;
-            this.txtSenhaJogador.UseSystemPasswordChar = true;
             // 
             // label8
             // 
