@@ -21,11 +21,11 @@ namespace ProjetoCartagena
 
         private void cboListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lstPartidas.Items.Clear();
             string status = cboListarPartidas.SelectedItem.ToString().Substring(0,1);
             string retornoPartidas = Jogo.ListarPartidas(status);
             retornoPartidas = retornoPartidas.Replace("\n", "");
             string[] partidas = retornoPartidas.Split('\r');
+            lstPartidas.Items.Clear();
             foreach(string partida in partidas){
                 lstPartidas.Items.Add(partida);
             }
@@ -39,15 +39,16 @@ namespace ProjetoCartagena
 
         private void btnExibirHistorico_Click(object sender, EventArgs e)
         {
-
+            lstHistoricoPartida.Items.Clear();
+            lstHistoricoPartida.Items.Add(Jogo.ExibirHistorico(Convert.ToInt32(txtIdPartida.Text)));
         }
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
-            lstJogadores.Items.Clear();
             string retornoJogadores = Jogo.ListarJogadores(Convert.ToInt32(txtIdPartida.Text));
             retornoJogadores = retornoJogadores.Replace("\n", "");
             string[] jogadores = retornoJogadores.Split('\r');
+            lstJogadores.Items.Clear();
             foreach(string jogador in jogadores) {
                 lstJogadores.Items.Add(jogador);
             }
@@ -65,23 +66,22 @@ namespace ProjetoCartagena
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            txtIdPartida.Text = Jogo.IniciarPartida(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
-   
+            Jogo.IniciarPartida(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
         }
 
         private void btnJogarFrente_Click(object sender, EventArgs e)
         {
-      
+            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text), cboSimbolo.Text.Substring(0,1));
         }
 
         private void btnJogarTras_Click(object sender, EventArgs e)
         {
-
+            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text));
         }
 
         private void btnPularJogador_Click(object sender, EventArgs e)
         {
-
+            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
         }
 
         private void btnExibirMao_Click(object sender, EventArgs e)
@@ -89,6 +89,7 @@ namespace ProjetoCartagena
             string mao = Jogo.ConsultarMao(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
             mao = mao.Replace("\n", "");
             string[] cartas = mao.Split('\r');
+            lstMaoJogador.Items.Clear();
             foreach (string carta in cartas) 
             {
                 string[] linha = carta.Split(',');
@@ -102,7 +103,8 @@ namespace ProjetoCartagena
 
         private void btnVerificarVez_Click(object sender, EventArgs e)
         {
-
+            lsbVerificarVez.Items.Clear();
+            lsbVerificarVez.Items.Add(Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text)));
         }
 
         private void btnExibirTabuleiro_Click(object sender, EventArgs e)
@@ -110,6 +112,7 @@ namespace ProjetoCartagena
             string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
             tabuleiro = tabuleiro.Replace("\n", "");
             string[] posicoes = tabuleiro.Split('\r');
+            lstTabuleiro.Items.Clear();
             for(int i = 0; i < posicoes.Length; i++)
             {
                 string[] linha = posicoes[i].Split(',');
