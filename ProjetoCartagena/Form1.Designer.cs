@@ -62,12 +62,15 @@
             this.btnExibirMao = new System.Windows.Forms.Button();
             this.lstMaoJogador = new System.Windows.Forms.ListBox();
             this.btnVerificarVez = new System.Windows.Forms.Button();
-            this.lstVerificarVez = new System.Windows.Forms.ListBox();
             this.btnExibirTabuleiro = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
             this.lstTabuleiro = new System.Windows.Forms.ListView();
             this.colPos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstVerificarVez = new System.Windows.Forms.ListView();
+            this.colPosicaoTabuleiro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colidJogador = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colNumPiratas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -258,11 +261,11 @@
             // 
             // txtIdJogador
             // 
-            this.txtIdJogador.Location = new System.Drawing.Point(305, 462);
+            this.txtIdJogador.Location = new System.Drawing.Point(308, 462);
             this.txtIdJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdJogador.MaxLength = 20;
             this.txtIdJogador.Name = "txtIdJogador";
-            this.txtIdJogador.Size = new System.Drawing.Size(87, 22);
+            this.txtIdJogador.Size = new System.Drawing.Size(75, 22);
             this.txtIdJogador.TabIndex = 19;
             // 
             // txtSenhaJogador
@@ -402,7 +405,7 @@
             // 
             // btnVerificarVez
             // 
-            this.btnVerificarVez.Location = new System.Drawing.Point(856, 33);
+            this.btnVerificarVez.Location = new System.Drawing.Point(861, 30);
             this.btnVerificarVez.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerificarVez.Name = "btnVerificarVez";
             this.btnVerificarVez.Size = new System.Drawing.Size(211, 30);
@@ -410,16 +413,6 @@
             this.btnVerificarVez.Text = "Verificar Vez";
             this.btnVerificarVez.UseVisualStyleBackColor = true;
             this.btnVerificarVez.Click += new System.EventHandler(this.btnVerificarVez_Click);
-            // 
-            // lstVerificarVez
-            // 
-            this.lstVerificarVez.FormattingEnabled = true;
-            this.lstVerificarVez.ItemHeight = 16;
-            this.lstVerificarVez.Location = new System.Drawing.Point(856, 102);
-            this.lstVerificarVez.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lstVerificarVez.Name = "lstVerificarVez";
-            this.lstVerificarVez.Size = new System.Drawing.Size(211, 516);
-            this.lstVerificarVez.TabIndex = 34;
             // 
             // btnExibirTabuleiro
             // 
@@ -446,7 +439,7 @@
             this.lstTabuleiro.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colPos,
             this.colCarta});
-            this.lstTabuleiro.Location = new System.Drawing.Point(1115, 102);
+            this.lstTabuleiro.Location = new System.Drawing.Point(1136, 102);
             this.lstTabuleiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstTabuleiro.Name = "lstTabuleiro";
             this.lstTabuleiro.Size = new System.Drawing.Size(211, 516);
@@ -457,22 +450,51 @@
             // colPos
             // 
             this.colPos.Text = "Pos";
-            this.colPos.Width = 73;
+            this.colPos.Width = 50;
             // 
             // colCarta
             // 
             this.colCarta.Text = "Carta";
-            this.colCarta.Width = 150;
+            this.colCarta.Width = 65;
+            // 
+            // lstVerificarVez
+            // 
+            this.lstVerificarVez.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colPosicaoTabuleiro,
+            this.colidJogador,
+            this.colNumPiratas});
+            this.lstVerificarVez.Location = new System.Drawing.Point(833, 102);
+            this.lstVerificarVez.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstVerificarVez.Name = "lstVerificarVez";
+            this.lstVerificarVez.Size = new System.Drawing.Size(275, 516);
+            this.lstVerificarVez.TabIndex = 39;
+            this.lstVerificarVez.UseCompatibleStateImageBehavior = false;
+            this.lstVerificarVez.View = System.Windows.Forms.View.Details;
+            // 
+            // colPosicaoTabuleiro
+            // 
+            this.colPosicaoTabuleiro.Text = "Pos";
+            this.colPosicaoTabuleiro.Width = 36;
+            // 
+            // colidJogador
+            // 
+            this.colidJogador.Text = "Id Jogador";
+            this.colidJogador.Width = 84;
+            // 
+            // colNumPiratas
+            // 
+            this.colNumPiratas.Text = "Numero de Piratas";
+            this.colNumPiratas.Width = 144;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1363, 657);
+            this.Controls.Add(this.lstVerificarVez);
             this.Controls.Add(this.lstTabuleiro);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnExibirTabuleiro);
-            this.Controls.Add(this.lstVerificarVez);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.lstMaoJogador);
             this.Controls.Add(this.btnExibirMao);
@@ -551,11 +573,15 @@
         private System.Windows.Forms.Button btnExibirMao;
         private System.Windows.Forms.ListBox lstMaoJogador;
         private System.Windows.Forms.Button btnVerificarVez;
-        private System.Windows.Forms.ListBox lstVerificarVez;
         private System.Windows.Forms.Button btnExibirTabuleiro;
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.ListView lstTabuleiro;
         private System.Windows.Forms.ColumnHeader colPos;
         private System.Windows.Forms.ColumnHeader colCarta;
+        private System.Windows.Forms.ListView lstVerificarVez;
+        private System.Windows.Forms.ColumnHeader colPosicaoTabuleiro;
+        private System.Windows.Forms.ColumnHeader colidJogador;
+        private System.Windows.Forms.ColumnHeader colNumPiratas;
     }
 }
+

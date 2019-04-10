@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using CartagenaServer;
 
@@ -6,10 +7,14 @@ namespace ProjetoCartagena
 {
     public partial class Form1 : Form
     {
+        List<Partida> partidas;
+        List<Jogador> Jogadores;
         public Form1()
         {
             InitializeComponent();
             inicializar();
+            partidas = new List<Partida>();
+            Jogadores = new List<Jogador>();
         }
 
         private void inicializar()
@@ -24,11 +29,12 @@ namespace ProjetoCartagena
             string status = cboListarPartidas.SelectedItem.ToString().Substring(0, 1);
             string retornoPartidas = Jogo.ListarPartidas(status);
             retornoPartidas = retornoPartidas.Replace("\n", "");
-            string[] partidas = retornoPartidas.Split('\r');
+            string[] jogos = retornoPartidas.Split('\r');
             lstPartidas.Items.Clear();
-            foreach (string partida in partidas)
+            Partida partida = new Partida();
+            foreach (string jogo in jogos)
             {
-                lstPartidas.Items.Add(partida);
+                lstPartidas.Items.Add(jogo);
             }
         }
 
@@ -88,7 +94,7 @@ namespace ProjetoCartagena
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            
+            Jogo.IniciarPartida(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
         }
         private void btnJogarFrente_Click(object sender, EventArgs e)
         {
@@ -157,8 +163,21 @@ namespace ProjetoCartagena
 
             try
             {
+                string verificaVez = Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text));
+                MessageBox.Show(verificaVez);
+                verificaVez = verificaVez.Replace("\n", "");
+                string[] posicoes = verificaVez.Split('\r');
                 lstVerificarVez.Items.Clear();
-                lstVerificarVez.Items.Add(Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text)));
+                for (int i = 0; i < posicoes.Length; i++)
+                {
+                    string[] linha = posicoes[i].Split(',');
+                    if (i < posicoes.Length - 1)
+                    {
+
+                        ListViewItem listView = new ListViewItem(linha);
+                        lstVerificarVez.Items.Add(listView);
+                    }
+                }
             }
             catch (FormatException)
             {
@@ -172,6 +191,7 @@ namespace ProjetoCartagena
             try
             {
                 string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
+                MessageBox.Show(tabuleiro);
                 tabuleiro = tabuleiro.Replace("\n", "");
                 string[] posicoes = tabuleiro.Split('\r');
                 lstTabuleiro.Items.Clear();
