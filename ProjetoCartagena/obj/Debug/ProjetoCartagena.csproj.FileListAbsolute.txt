@@ -22,14 +22,3 @@ C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\Proje
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe.config
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.pdb
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csprojAssemblyReference.cache
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Properties.Resources.resources
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.GenerateResource.cache
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CoreCompileInputs.cache
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
-C:\Users\Vitor Moschetti\source\repos\CartagenePI\Versão 2\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb

@@ -21,12 +21,13 @@ namespace ProjetoCartagena
 
         private void cboListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string status = cboListarPartidas.SelectedItem.ToString().Substring(0,1);
+            string status = cboListarPartidas.SelectedItem.ToString().Substring(0, 1);
             string retornoPartidas = Jogo.ListarPartidas(status);
             retornoPartidas = retornoPartidas.Replace("\n", "");
             string[] partidas = retornoPartidas.Split('\r');
             lstPartidas.Items.Clear();
-            foreach(string partida in partidas){
+            foreach (string partida in partidas)
+            {
                 lstPartidas.Items.Add(partida);
             }
         }
@@ -34,96 +35,164 @@ namespace ProjetoCartagena
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
             string retorno = Jogo.CriarPartida(txtNomePartida.Text, txtSenhaPartida.Text);
-            
+
         }
 
         private void btnExibirHistorico_Click(object sender, EventArgs e)
         {
-            lstHistoricoPartida.Items.Clear();
-            lstHistoricoPartida.Items.Add(Jogo.ExibirHistorico(Convert.ToInt32(txtIdPartida.Text)));
+            try
+            {
+                lstHistoricoPartida.Items.Clear();
+                lstHistoricoPartida.Items.Add(Jogo.ExibirHistorico(Convert.ToInt32(txtIdPartida.Text)));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID partida", "ERRO");
+            }
         }
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
-            string retornoJogadores = Jogo.ListarJogadores(Convert.ToInt32(txtIdPartida.Text));
-            retornoJogadores = retornoJogadores.Replace("\n", "");
-            string[] jogadores = retornoJogadores.Split('\r');
-            lstJogadores.Items.Clear();
-            foreach(string jogador in jogadores) {
-                lstJogadores.Items.Add(jogador);
+            try
+            {
+                string retornoJogadores = Jogo.ListarJogadores(Convert.ToInt32(txtIdPartida.Text));
+                retornoJogadores = retornoJogadores.Replace("\n", "");
+                string[] jogadores = retornoJogadores.Split('\r');
+                lstJogadores.Items.Clear();
+                foreach (string jogador in jogadores)
+                {
+                    lstJogadores.Items.Add(jogador);
+                }
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID partida", "ERRO");
+            }
+            
         }
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            string dadosDoJogador = Jogo.EntrarPartida(Convert.ToInt32(txtIdPartida.Text), txtNomeJogador.Text, txtSenhaPartida.Text);
-            string[] valores = dadosDoJogador.Split(',');
+            try {
+                string dadosDoJogador = Jogo.EntrarPartida(Convert.ToInt32(txtIdPartida.Text), txtNomeJogador.Text, txtSenhaPartida.Text);
+                string[] valores = dadosDoJogador.Split(',');
 
-            txtIdJogador.Text = valores[0];
-            txtSenhaJogador.Text = valores[1];
-            txtCorJogador.Text = valores[2];
+                txtIdJogador.Text = valores[0];
+                txtSenhaJogador.Text = valores[1];
+                txtCorJogador.Text = valores[2];
+            } catch(FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID partida, Nome do Jogador e Senha partida", "ERRO");
+            }
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            Jogo.IniciarPartida(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
+            
         }
-
         private void btnJogarFrente_Click(object sender, EventArgs e)
         {
-            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text), cboSimbolo.Text.Substring(0,1));
+            try
+            {
+                Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text), cboSimbolo.Text.Substring(0, 1));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID jogador, Senha Jogador, Simbolo e Posicao", "ERRO");
+            }
         }
 
         private void btnJogarTras_Click(object sender, EventArgs e)
         {
-            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text));
+            try
+            {
+                Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text, Convert.ToInt32(txtPosicao.Text));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID jogador, Senha Jogador e Posicao", "ERRO");
+            }
         }
 
         private void btnPularJogador_Click(object sender, EventArgs e)
         {
-            Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
+            try
+            {
+                Jogo.Jogar(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID jogador e Senha", "ERRO");
+            }
+            
         }
 
         private void btnExibirMao_Click(object sender, EventArgs e)
         {
-            string mao = Jogo.ConsultarMao(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
-            mao = mao.Replace("\n", "");
-            string[] cartas = mao.Split('\r');
-            lstMaoJogador.Items.Clear();
-            foreach (string carta in cartas) 
+            try
             {
-                string[] linha = carta.Split(',');
-                if (linha.Length > 1)
+                string mao = Jogo.ConsultarMao(Convert.ToInt32(txtIdJogador.Text), txtSenhaJogador.Text);
+                mao = mao.Replace("\n", "");
+                string[] cartas = mao.Split('\r');
+                lstMaoJogador.Items.Clear();
+                foreach (string carta in cartas)
                 {
-                    linha[0] = editarNome(linha[0]);
-                    lstMaoJogador.Items.Add("Voce tem " + linha[1] + " cartas de " + linha[0]);
+                    string[] linha = carta.Split(',');
+                    if (linha.Length > 1)
+                    {
+                        linha[0] = editarNome(linha[0]);
+                        lstMaoJogador.Items.Add("Voce tem " + linha[1] + " cartas de " + linha[0]);
+                    }
                 }
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID jogador e Senha", "ERRO");
+            }
+            
         }
 
         private void btnVerificarVez_Click(object sender, EventArgs e)
         {
-            lsbVerificarVez.Items.Clear();
-            lsbVerificarVez.Items.Add(Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text)));
+
+            try
+            {
+                lstVerificarVez.Items.Clear();
+                lstVerificarVez.Items.Add(Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text)));
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID da partida", "ERRO");
+            }
+           
         }
 
         private void btnExibirTabuleiro_Click(object sender, EventArgs e)
         {
-            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
-            tabuleiro = tabuleiro.Replace("\n", "");
-            string[] posicoes = tabuleiro.Split('\r');
-            lstTabuleiro.Items.Clear();
-            for(int i = 0; i < posicoes.Length; i++)
+            try
             {
-                string[] linha = posicoes[i].Split(',');
-                if (i > 0 && i < posicoes.Length - 1)
+                string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
+                tabuleiro = tabuleiro.Replace("\n", "");
+                string[] posicoes = tabuleiro.Split('\r');
+                lstTabuleiro.Items.Clear();
+                for (int i = 0; i < posicoes.Length; i++)
                 {
-                    linha[1] = editarNome("" + linha[1]);
+                    string[] linha = posicoes[i].Split(',');
+                    if (i > 0 && i < posicoes.Length - 1)
+                    {
+                        linha[1] = editarNome("" + linha[1]);
+                    }
+                    ListViewItem listView = new ListViewItem(linha);
+                    lstTabuleiro.Items.Add(listView);
                 }
-                ListViewItem listView = new ListViewItem(linha);
-                lstTabuleiro.Items.Add(listView);
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("ERRO!!! Verifique os campos ID da partida", "ERRO");
+            }
+            
         }
+    
 
         private string editarNome(string v)
         {

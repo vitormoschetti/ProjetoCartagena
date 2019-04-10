@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoCartagena
+namespace ProjetoCartagena.model
 {
     class Jogador
     {
