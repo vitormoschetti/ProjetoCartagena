@@ -41,7 +41,6 @@
             this.btnListarJogadores = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdPartida = new System.Windows.Forms.TextBox();
-            this.lstJogadores = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomeJogador = new System.Windows.Forms.TextBox();
             this.btnEntrarPartida = new System.Windows.Forms.Button();
@@ -64,13 +63,9 @@
             this.btnVerificarVez = new System.Windows.Forms.Button();
             this.btnExibirTabuleiro = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
-            this.lstTabuleiro = new System.Windows.Forms.ListView();
-            this.colPos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCarta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lstVerificarVez = new System.Windows.Forms.ListView();
-            this.colPosicaoTabuleiro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colidJogador = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNumPiratas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstJogadores = new System.Windows.Forms.ListBox();
+            this.lstVerificaVez = new System.Windows.Forms.ListBox();
+            this.lstExibeTabuleiro = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +100,7 @@
             this.lstPartidas.Location = new System.Drawing.Point(44, 86);
             this.lstPartidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstPartidas.Name = "lstPartidas";
-            this.lstPartidas.Size = new System.Drawing.Size(215, 180);
+            this.lstPartidas.Size = new System.Drawing.Size(318, 180);
             this.lstPartidas.TabIndex = 2;
             // 
             // label2
@@ -128,10 +123,10 @@
             // 
             // txtNomePartida
             // 
-            this.txtNomePartida.Location = new System.Drawing.Point(44, 311);
+            this.txtNomePartida.Location = new System.Drawing.Point(44, 309);
             this.txtNomePartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomePartida.Name = "txtNomePartida";
-            this.txtNomePartida.Size = new System.Drawing.Size(215, 22);
+            this.txtNomePartida.Size = new System.Drawing.Size(318, 22);
             this.txtNomePartida.TabIndex = 5;
             // 
             // txtSenhaPartida
@@ -169,15 +164,15 @@
             // 
             this.lstHistoricoPartida.FormattingEnabled = true;
             this.lstHistoricoPartida.ItemHeight = 16;
-            this.lstHistoricoPartida.Location = new System.Drawing.Point(44, 466);
+            this.lstHistoricoPartida.Location = new System.Drawing.Point(44, 462);
             this.lstHistoricoPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstHistoricoPartida.Name = "lstHistoricoPartida";
-            this.lstHistoricoPartida.Size = new System.Drawing.Size(215, 164);
+            this.lstHistoricoPartida.Size = new System.Drawing.Size(318, 164);
             this.lstHistoricoPartida.TabIndex = 9;
             // 
             // btnListarJogadores
             // 
-            this.btnListarJogadores.Location = new System.Drawing.Point(308, 37);
+            this.btnListarJogadores.Location = new System.Drawing.Point(439, 37);
             this.btnListarJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListarJogadores.Name = "btnListarJogadores";
             this.btnListarJogadores.Size = new System.Drawing.Size(131, 28);
@@ -189,7 +184,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(449, 43);
+            this.label4.Location = new System.Drawing.Point(580, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 17);
             this.label4.TabIndex = 11;
@@ -197,26 +192,16 @@
             // 
             // txtIdPartida
             // 
-            this.txtIdPartida.Location = new System.Drawing.Point(475, 39);
+            this.txtIdPartida.Location = new System.Drawing.Point(606, 39);
             this.txtIdPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdPartida.Name = "txtIdPartida";
             this.txtIdPartida.Size = new System.Drawing.Size(45, 22);
             this.txtIdPartida.TabIndex = 12;
             // 
-            // lstJogadores
-            // 
-            this.lstJogadores.FormattingEnabled = true;
-            this.lstJogadores.ItemHeight = 16;
-            this.lstJogadores.Location = new System.Drawing.Point(305, 86);
-            this.lstJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lstJogadores.Name = "lstJogadores";
-            this.lstJogadores.Size = new System.Drawing.Size(211, 180);
-            this.lstJogadores.TabIndex = 13;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(308, 290);
+            this.label5.Location = new System.Drawing.Point(439, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 14;
@@ -224,7 +209,7 @@
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(308, 310);
+            this.txtNomeJogador.Location = new System.Drawing.Point(439, 310);
             this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeJogador.Name = "txtNomeJogador";
             this.txtNomeJogador.Size = new System.Drawing.Size(211, 22);
@@ -232,7 +217,7 @@
             // 
             // btnEntrarPartida
             // 
-            this.btnEntrarPartida.Location = new System.Drawing.Point(305, 357);
+            this.btnEntrarPartida.Location = new System.Drawing.Point(436, 357);
             this.btnEntrarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEntrarPartida.Name = "btnEntrarPartida";
             this.btnEntrarPartida.Size = new System.Drawing.Size(151, 30);
@@ -244,7 +229,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(308, 441);
+            this.label6.Location = new System.Drawing.Point(439, 441);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 17);
             this.label6.TabIndex = 17;
@@ -253,7 +238,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(416, 441);
+            this.label7.Location = new System.Drawing.Point(547, 441);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 18;
@@ -261,7 +246,7 @@
             // 
             // txtIdJogador
             // 
-            this.txtIdJogador.Location = new System.Drawing.Point(308, 462);
+            this.txtIdJogador.Location = new System.Drawing.Point(439, 462);
             this.txtIdJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdJogador.MaxLength = 20;
             this.txtIdJogador.Name = "txtIdJogador";
@@ -270,7 +255,7 @@
             // 
             // txtSenhaJogador
             // 
-            this.txtSenhaJogador.Location = new System.Drawing.Point(419, 462);
+            this.txtSenhaJogador.Location = new System.Drawing.Point(550, 462);
             this.txtSenhaJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenhaJogador.MaxLength = 10;
             this.txtSenhaJogador.Name = "txtSenhaJogador";
@@ -280,7 +265,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 548);
+            this.label8.Location = new System.Drawing.Point(430, 548);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 17);
             this.label8.TabIndex = 21;
@@ -289,7 +274,7 @@
             // txtCorJogador
             // 
             this.txtCorJogador.Enabled = false;
-            this.txtCorJogador.Location = new System.Drawing.Point(305, 569);
+            this.txtCorJogador.Location = new System.Drawing.Point(436, 569);
             this.txtCorJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorJogador.Name = "txtCorJogador";
             this.txtCorJogador.Size = new System.Drawing.Size(100, 22);
@@ -297,7 +282,7 @@
             // 
             // btnIniciarPartida
             // 
-            this.btnIniciarPartida.Location = new System.Drawing.Point(576, 33);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(707, 33);
             this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(212, 27);
@@ -309,7 +294,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(573, 102);
+            this.label9.Location = new System.Drawing.Point(704, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 17);
             this.label9.TabIndex = 24;
@@ -318,7 +303,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(679, 102);
+            this.label10.Location = new System.Drawing.Point(810, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 25;
@@ -326,7 +311,7 @@
             // 
             // txtPosicao
             // 
-            this.txtPosicao.Location = new System.Drawing.Point(576, 124);
+            this.txtPosicao.Location = new System.Drawing.Point(707, 124);
             this.txtPosicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPosicao.Name = "txtPosicao";
             this.txtPosicao.Size = new System.Drawing.Size(76, 22);
@@ -343,7 +328,7 @@
             "Pistola",
             "Tricornio",
             "Faca"});
-            this.cboSimbolo.Location = new System.Drawing.Point(683, 124);
+            this.cboSimbolo.Location = new System.Drawing.Point(814, 124);
             this.cboSimbolo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSimbolo.Name = "cboSimbolo";
             this.cboSimbolo.Size = new System.Drawing.Size(105, 24);
@@ -351,7 +336,7 @@
             // 
             // btnJogarFrente
             // 
-            this.btnJogarFrente.Location = new System.Drawing.Point(576, 174);
+            this.btnJogarFrente.Location = new System.Drawing.Point(707, 174);
             this.btnJogarFrente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnJogarFrente.Name = "btnJogarFrente";
             this.btnJogarFrente.Size = new System.Drawing.Size(88, 82);
@@ -362,7 +347,7 @@
             // 
             // btnJogarTras
             // 
-            this.btnJogarTras.Location = new System.Drawing.Point(700, 174);
+            this.btnJogarTras.Location = new System.Drawing.Point(831, 174);
             this.btnJogarTras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnJogarTras.Name = "btnJogarTras";
             this.btnJogarTras.Size = new System.Drawing.Size(87, 82);
@@ -373,7 +358,7 @@
             // 
             // btnPularJogador
             // 
-            this.btnPularJogador.Location = new System.Drawing.Point(576, 279);
+            this.btnPularJogador.Location = new System.Drawing.Point(707, 279);
             this.btnPularJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPularJogador.Name = "btnPularJogador";
             this.btnPularJogador.Size = new System.Drawing.Size(211, 30);
@@ -384,7 +369,7 @@
             // 
             // btnExibirMao
             // 
-            this.btnExibirMao.Location = new System.Drawing.Point(576, 343);
+            this.btnExibirMao.Location = new System.Drawing.Point(707, 343);
             this.btnExibirMao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExibirMao.Name = "btnExibirMao";
             this.btnExibirMao.Size = new System.Drawing.Size(211, 30);
@@ -397,7 +382,7 @@
             // 
             this.lstMaoJogador.FormattingEnabled = true;
             this.lstMaoJogador.ItemHeight = 16;
-            this.lstMaoJogador.Location = new System.Drawing.Point(576, 396);
+            this.lstMaoJogador.Location = new System.Drawing.Point(707, 396);
             this.lstMaoJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstMaoJogador.Name = "lstMaoJogador";
             this.lstMaoJogador.Size = new System.Drawing.Size(211, 228);
@@ -405,7 +390,7 @@
             // 
             // btnVerificarVez
             // 
-            this.btnVerificarVez.Location = new System.Drawing.Point(861, 30);
+            this.btnVerificarVez.Location = new System.Drawing.Point(966, 24);
             this.btnVerificarVez.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerificarVez.Name = "btnVerificarVez";
             this.btnVerificarVez.Size = new System.Drawing.Size(211, 30);
@@ -416,7 +401,7 @@
             // 
             // btnExibirTabuleiro
             // 
-            this.btnExibirTabuleiro.Location = new System.Drawing.Point(1115, 33);
+            this.btnExibirTabuleiro.Location = new System.Drawing.Point(1364, 24);
             this.btnExibirTabuleiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExibirTabuleiro.Name = "btnExibirTabuleiro";
             this.btnExibirTabuleiro.Size = new System.Drawing.Size(211, 30);
@@ -428,71 +413,51 @@
             // lblVersao
             // 
             this.lblVersao.AutoSize = true;
-            this.lblVersao.Location = new System.Drawing.Point(1283, 631);
+            this.lblVersao.Location = new System.Drawing.Point(1638, 631);
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(53, 17);
             this.lblVersao.TabIndex = 37;
             this.lblVersao.Text = "Versao";
             // 
-            // lstTabuleiro
+            // lstJogadores
             // 
-            this.lstTabuleiro.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colPos,
-            this.colCarta});
-            this.lstTabuleiro.Location = new System.Drawing.Point(1136, 102);
-            this.lstTabuleiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lstTabuleiro.Name = "lstTabuleiro";
-            this.lstTabuleiro.Size = new System.Drawing.Size(211, 516);
-            this.lstTabuleiro.TabIndex = 38;
-            this.lstTabuleiro.UseCompatibleStateImageBehavior = false;
-            this.lstTabuleiro.View = System.Windows.Forms.View.Details;
+            this.lstJogadores.FormattingEnabled = true;
+            this.lstJogadores.ItemHeight = 16;
+            this.lstJogadores.Location = new System.Drawing.Point(436, 86);
+            this.lstJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstJogadores.Name = "lstJogadores";
+            this.lstJogadores.Size = new System.Drawing.Size(211, 180);
+            this.lstJogadores.TabIndex = 13;
             // 
-            // colPos
+            // lstVerificaVez
             // 
-            this.colPos.Text = "Pos";
-            this.colPos.Width = 50;
+            this.lstVerificaVez.FormattingEnabled = true;
+            this.lstVerificaVez.ItemHeight = 16;
+            this.lstVerificaVez.Location = new System.Drawing.Point(966, 76);
+            this.lstVerificaVez.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstVerificaVez.Name = "lstVerificaVez";
+            this.lstVerificaVez.Size = new System.Drawing.Size(294, 548);
+            this.lstVerificaVez.TabIndex = 38;
+            this.lstVerificaVez.SelectedIndexChanged += new System.EventHandler(this.lstVerificaVez_SelectedIndexChanged);
             // 
-            // colCarta
+            // lstExibeTabuleiro
             // 
-            this.colCarta.Text = "Carta";
-            this.colCarta.Width = 65;
-            // 
-            // lstVerificarVez
-            // 
-            this.lstVerificarVez.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colPosicaoTabuleiro,
-            this.colidJogador,
-            this.colNumPiratas});
-            this.lstVerificarVez.Location = new System.Drawing.Point(833, 102);
-            this.lstVerificarVez.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lstVerificarVez.Name = "lstVerificarVez";
-            this.lstVerificarVez.Size = new System.Drawing.Size(275, 516);
-            this.lstVerificarVez.TabIndex = 39;
-            this.lstVerificarVez.UseCompatibleStateImageBehavior = false;
-            this.lstVerificarVez.View = System.Windows.Forms.View.Details;
-            // 
-            // colPosicaoTabuleiro
-            // 
-            this.colPosicaoTabuleiro.Text = "Pos";
-            this.colPosicaoTabuleiro.Width = 36;
-            // 
-            // colidJogador
-            // 
-            this.colidJogador.Text = "Id Jogador";
-            this.colidJogador.Width = 84;
-            // 
-            // colNumPiratas
-            // 
-            this.colNumPiratas.Text = "Numero de Piratas";
-            this.colNumPiratas.Width = 144;
+            this.lstExibeTabuleiro.FormattingEnabled = true;
+            this.lstExibeTabuleiro.ItemHeight = 16;
+            this.lstExibeTabuleiro.Location = new System.Drawing.Point(1364, 76);
+            this.lstExibeTabuleiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstExibeTabuleiro.Name = "lstExibeTabuleiro";
+            this.lstExibeTabuleiro.Size = new System.Drawing.Size(286, 548);
+            this.lstExibeTabuleiro.TabIndex = 39;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 657);
-            this.Controls.Add(this.lstVerificarVez);
-            this.Controls.Add(this.lstTabuleiro);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1703, 657);
+            this.Controls.Add(this.lstExibeTabuleiro);
+            this.Controls.Add(this.lstVerificaVez);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnExibirTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
@@ -552,7 +517,6 @@
         private System.Windows.Forms.Button btnListarJogadores;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIdPartida;
-        private System.Windows.Forms.ListBox lstJogadores;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNomeJogador;
         private System.Windows.Forms.Button btnEntrarPartida;
@@ -575,13 +539,9 @@
         private System.Windows.Forms.Button btnVerificarVez;
         private System.Windows.Forms.Button btnExibirTabuleiro;
         private System.Windows.Forms.Label lblVersao;
-        private System.Windows.Forms.ListView lstTabuleiro;
-        private System.Windows.Forms.ColumnHeader colPos;
-        private System.Windows.Forms.ColumnHeader colCarta;
-        private System.Windows.Forms.ListView lstVerificarVez;
-        private System.Windows.Forms.ColumnHeader colPosicaoTabuleiro;
-        private System.Windows.Forms.ColumnHeader colidJogador;
-        private System.Windows.Forms.ColumnHeader colNumPiratas;
+        private System.Windows.Forms.ListBox lstJogadores;
+        private System.Windows.Forms.ListBox lstVerificaVez;
+        private System.Windows.Forms.ListBox lstExibeTabuleiro;
     }
 }
 

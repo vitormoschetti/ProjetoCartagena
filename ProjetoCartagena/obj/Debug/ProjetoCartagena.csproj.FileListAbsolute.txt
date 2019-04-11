@@ -21,3 +21,25 @@ C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\Proje
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
 C:\Users\Ygor\Documents\GitHub\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe.config
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.pdb
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csprojAssemblyReference.cache
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Properties.Resources.resources
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.GenerateResource.cache
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CoreCompileInputs.cache
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
+I:\3 Semestre\Orientacao a Objetos e PI\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe.config
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\bin\Debug\ProjetoCartagena.pdb
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csprojAssemblyReference.cache
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.Properties.Resources.resources
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.GenerateResource.cache
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CoreCompileInputs.cache
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
+C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb

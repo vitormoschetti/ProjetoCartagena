@@ -7,14 +7,12 @@ namespace ProjetoCartagena
 {
     public partial class Form1 : Form
     {
-        List<Partida> partidas;
-        List<Jogador> Jogadores;
+        Partida partida;
+        Jogador nossoJogador;
         public Form1()
         {
             InitializeComponent();
             inicializar();
-            partidas = new List<Partida>();
-            Jogadores = new List<Jogador>();
         }
 
         private void inicializar()
@@ -22,6 +20,7 @@ namespace ProjetoCartagena
             lblVersao.Text = "Versao " + Jogo.Versao;
             cboListarPartidas.SelectedIndex = 0;
             cboSimbolo.SelectedIndex = 0;
+            partida = new Partida();
         }
 
         private void cboListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,7 +30,6 @@ namespace ProjetoCartagena
             retornoPartidas = retornoPartidas.Replace("\n", "");
             string[] jogos = retornoPartidas.Split('\r');
             lstPartidas.Items.Clear();
-            Partida partida = new Partida();
             foreach (string jogo in jogos)
             {
                 lstPartidas.Items.Add(jogo);
@@ -41,7 +39,6 @@ namespace ProjetoCartagena
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
             string retorno = Jogo.CriarPartida(txtNomePartida.Text, txtSenhaPartida.Text);
-
         }
 
         private void btnExibirHistorico_Click(object sender, EventArgs e)
@@ -49,7 +46,21 @@ namespace ProjetoCartagena
             try
             {
                 lstHistoricoPartida.Items.Clear();
-                lstHistoricoPartida.Items.Add(Jogo.ExibirHistorico(Convert.ToInt32(txtIdPartida.Text)));
+                string retorno = Jogo.ExibirHistorico(Convert.ToInt32(txtIdPartida.Text));
+                retorno = retorno.Replace("\n", "");
+                string[] historico = retorno.Split('\r');
+                string textoExibido = "";
+                for (int i = 0; i < historico.Length - 1; i++)
+                {
+                    string[] linha = historico[i].Split(',');
+                    foreach (Jogador j in partida.jogadores) {
+                        if(j.id == Convert.ToInt32(linha[0]))
+                        {
+                            textoExibido = j.nome + " na sua " + linha[1] + "jagada jogou um " + editarNome(linha[2]) + " e foi da posicao " + linha[3] + " para a " + linha[4];
+                        }
+                    }    
+                    lstHistoricoPartida.Items.Add(textoExibido);
+                }
             }
             catch (FormatException)
             {
@@ -65,9 +76,13 @@ namespace ProjetoCartagena
                 retornoJogadores = retornoJogadores.Replace("\n", "");
                 string[] jogadores = retornoJogadores.Split('\r');
                 lstJogadores.Items.Clear();
-                foreach (string jogador in jogadores)
+                //Ultima linha esta retornando a porra de um espaço em branco, ai tem que fazer essa gambiarra pra funcionar, foda viu
+                for (int i = 0; i < jogadores.Length - 1; i++)
                 {
-                    lstJogadores.Items.Add(jogador);
+                    string[] dadosJogador = jogadores[i].Split(',');
+                    Jogador j = new Jogador(Convert.ToInt32(dadosJogador[0]), dadosJogador[1], dadosJogador[2]);
+                    partida.jogadores.Add(j);
+                    lstJogadores.Items.Add(jogadores[i]);
                 }
             }
             catch (FormatException)
@@ -82,10 +97,12 @@ namespace ProjetoCartagena
             try {
                 string dadosDoJogador = Jogo.EntrarPartida(Convert.ToInt32(txtIdPartida.Text), txtNomeJogador.Text, txtSenhaPartida.Text);
                 string[] valores = dadosDoJogador.Split(',');
+                partida = new Partida(Convert.ToInt32(txtIdPartida.Text), txtNomePartida.Text, txtSenhaPartida.Text);
 
                 txtIdJogador.Text = valores[0];
                 txtSenhaJogador.Text = valores[1];
                 txtCorJogador.Text = valores[2];
+                nossoJogador = new Jogador(Convert.ToInt32(valores[0]), valores[1], valores[2], txtNomeJogador.Text);
             } catch(FormatException)
             {
                 MessageBox.Show("ERRO!!! Verifique os campos ID partida, Nome do Jogador e Senha partida", "ERRO");
@@ -164,19 +181,35 @@ namespace ProjetoCartagena
             try
             {
                 string verificaVez = Jogo.VerificarVez(Convert.ToInt32(txtIdPartida.Text));
-                MessageBox.Show(verificaVez);
                 verificaVez = verificaVez.Replace("\n", "");
                 string[] posicoes = verificaVez.Split('\r');
-                lstVerificarVez.Items.Clear();
-                for (int i = 0; i < posicoes.Length; i++)
+                lstVerificaVez.Items.Clear();
+                //Ultima linha esta retornando a porra de um espaço em branco, ai tem que fazer essa gambiarra pra funcionar, foda viu
+                for (int i = 0; i < posicoes.Length - 1; i++)
                 {
                     string[] linha = posicoes[i].Split(',');
-                    if (i < posicoes.Length - 1)
+                    string textoExibido = "";
+                    //Verifica se é a primeira linha
+                    if (!(posicoes[i].Equals(posicoes[0])))
                     {
+                        foreach (Jogador j in partida.jogadores)
+                        {
+                            if (j.id == Convert.ToInt32(linha[1]))
+                            {
+                                textoExibido = "O jogador " + j.nome + " tem " + linha[2] + " bonecos na casa " + linha[0];
+                            }
+                        }
+                    } else
+                    {
+                        foreach (Jogador j in partida.jogadores)
+                        {
+                            if (j.id == Convert.ToInt32(linha[1])) {
+                                textoExibido = "Esta na vez do " + j.nome + " ele esta na " + linha[2] + " jogada";
+                            }
+                        }
 
-                        ListViewItem listView = new ListViewItem(linha);
-                        lstVerificarVez.Items.Add(listView);
                     }
+                    lstVerificaVez.Items.Add(textoExibido);
                 }
             }
             catch (FormatException)
@@ -191,26 +224,21 @@ namespace ProjetoCartagena
             try
             {
                 string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtIdPartida.Text));
-                MessageBox.Show(tabuleiro);
                 tabuleiro = tabuleiro.Replace("\n", "");
                 string[] posicoes = tabuleiro.Split('\r');
-                lstTabuleiro.Items.Clear();
-                for (int i = 0; i < posicoes.Length; i++)
+                lstExibeTabuleiro.Items.Clear();
+                string textoExibido = "";
+                for (int i = 1; i < posicoes.Length - 2; i++)
                 {
                     string[] linha = posicoes[i].Split(',');
-                    if (i > 0 && i < posicoes.Length - 1)
-                    {
-                        linha[1] = editarNome("" + linha[1]);
-                    }
-                    ListViewItem listView = new ListViewItem(linha);
-                    lstTabuleiro.Items.Add(listView);
+                    textoExibido = "Na posiçao " + linha[0] + " temos um(a) " + editarNome(linha[1]);
+                    lstExibeTabuleiro.Items.Add(textoExibido);
                 }
             }
             catch (FormatException)
             {
                 MessageBox.Show("ERRO!!! Verifique os campos ID da partida", "ERRO");
             }
-            
         }
     
 
@@ -242,6 +270,11 @@ namespace ProjetoCartagena
             }
 
             return "";
+        }
+
+        private void lstVerificaVez_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
