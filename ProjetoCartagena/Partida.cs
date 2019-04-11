@@ -19,7 +19,6 @@ namespace ProjetoCartagena
         {
 
             jogadores = new List<Jogador>();
-         
         }
 
         public List<Jogador> jogadores { get; set; }

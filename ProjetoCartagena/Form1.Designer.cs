@@ -436,7 +436,7 @@
             this.lstVerificaVez.Location = new System.Drawing.Point(966, 76);
             this.lstVerificaVez.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstVerificaVez.Name = "lstVerificaVez";
-            this.lstVerificaVez.Size = new System.Drawing.Size(294, 548);
+            this.lstVerificaVez.Size = new System.Drawing.Size(336, 548);
             this.lstVerificaVez.TabIndex = 38;
             this.lstVerificaVez.SelectedIndexChanged += new System.EventHandler(this.lstVerificaVez_SelectedIndexChanged);
             // 
@@ -447,7 +447,7 @@
             this.lstExibeTabuleiro.Location = new System.Drawing.Point(1364, 76);
             this.lstExibeTabuleiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstExibeTabuleiro.Name = "lstExibeTabuleiro";
-            this.lstExibeTabuleiro.Size = new System.Drawing.Size(286, 548);
+            this.lstExibeTabuleiro.Size = new System.Drawing.Size(420, 548);
             this.lstExibeTabuleiro.TabIndex = 39;
             // 
             // Form1
@@ -455,7 +455,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1703, 657);
+            this.ClientSize = new System.Drawing.Size(1796, 657);
             this.Controls.Add(this.lstExibeTabuleiro);
             this.Controls.Add(this.lstVerificaVez);
             this.Controls.Add(this.lblVersao);

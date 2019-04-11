@@ -21,6 +21,7 @@ namespace ProjetoCartagena
             cboListarPartidas.SelectedIndex = 0;
             cboSimbolo.SelectedIndex = 0;
             partida = new Partida();
+            partida.jogadores = new List<Jogador>();
         }
 
         private void cboListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,8 +198,11 @@ namespace ProjetoCartagena
                             if (j.id == Convert.ToInt32(linha[1]))
                             {
                                 textoExibido = "O jogador " + j.nome + " tem " + linha[2] + " bonecos na casa " + linha[0];
+                                        j.posicao.Add(Convert.ToInt32(linha[0]));
+                                
                             }
                         }
+
                     } else
                     {
                         foreach (Jogador j in partida.jogadores)
@@ -231,7 +235,19 @@ namespace ProjetoCartagena
                 for (int i = 1; i < posicoes.Length - 2; i++)
                 {
                     string[] linha = posicoes[i].Split(',');
-                    textoExibido = "Na posiçao " + linha[0] + " temos um(a) " + editarNome(linha[1]);
+
+                    foreach(Jogador j in partida.jogadores)
+                    {
+                        if (j.posicao.Contains(Convert.ToInt32(linha[0])))
+                        {
+                            textoExibido = "Na posiçao " + linha[0] + " tem um(a) " + editarNome(linha[1]) + " e o " + j.nome;
+                            break;
+                        }
+                        else
+                        {
+                            textoExibido = "Na posiçao " + linha[0] + " tem um(a) " + editarNome(linha[1]);
+                        }
+                    }
                     lstExibeTabuleiro.Items.Add(textoExibido);
                 }
             }
