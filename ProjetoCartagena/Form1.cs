@@ -56,7 +56,7 @@ namespace ProjetoCartagena
                     foreach (Jogador j in partida.jogadores) {
                         if(j.id == Convert.ToInt32(linha[0]))
                         {
-                            textoExibido = j.nome + " na sua " + linha[1] + "jagada jogou um " + editarNome(linha[2]) + " e foi da posicao " + linha[3] + " para a " + linha[4];
+                            textoExibido = j.nome + " na sua " + linha[1] + " jogada jogou um " + editarNome(linha[2]) + " e foi da posicao " + linha[3] + " para a " + linha[4];
                         }
                     }    
                     lstHistoricoPartida.Items.Add(textoExibido);
