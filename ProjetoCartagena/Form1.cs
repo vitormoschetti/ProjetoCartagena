@@ -12,7 +12,7 @@ namespace ProjetoCartagena
         public Form1()
         {
             InitializeComponent();
-            inicializar();
+            inicializar();            
         }
 
         private void inicializar()
@@ -57,7 +57,10 @@ namespace ProjetoCartagena
                     foreach (Jogador j in partida.jogadores) {
                         if(j.id == Convert.ToInt32(linha[0]))
                         {
-                            textoExibido = j.nome + " na sua " + linha[1] + " jogada jogou um " + editarNome(linha[2]) + " e foi da posicao " + linha[3] + " para a " + linha[4];
+                            if(!linha[2].Equals(""))
+                                textoExibido = j.nome + " na sua " + linha[1] + " jogada jogou um " + editarNome(linha[2]) + " e foi da posicao " + linha[3] + " para a " + linha[4];
+                            else
+                                textoExibido = j.nome + " na sua " + linha[1] + " jogada retornou da posicao " + linha[3] + " para a " + linha[4];
                         }
                     }    
                     lstHistoricoPartida.Items.Add(textoExibido);
@@ -76,6 +79,7 @@ namespace ProjetoCartagena
                 string retornoJogadores = Jogo.ListarJogadores(Convert.ToInt32(txtIdPartida.Text));
                 retornoJogadores = retornoJogadores.Replace("\n", "");
                 string[] jogadores = retornoJogadores.Split('\r');
+                partida.jogadores = new List<Jogador>();
                 lstJogadores.Items.Clear();
                 //Ultima linha esta retornando a porra de um espaço em branco, ai tem que fazer essa gambiarra pra funcionar, foda viu
                 for (int i = 0; i < jogadores.Length - 1; i++)
@@ -106,6 +110,7 @@ namespace ProjetoCartagena
                 nossoJogador = new Jogador(Convert.ToInt32(valores[0]), valores[1], valores[2], txtNomeJogador.Text);
             } catch(FormatException)
             {
+
                 MessageBox.Show("ERRO!!! Verifique os campos ID partida, Nome do Jogador e Senha partida", "ERRO");
             }
         }
@@ -197,9 +202,10 @@ namespace ProjetoCartagena
                         {
                             if (j.id == Convert.ToInt32(linha[1]))
                             {
-                                textoExibido = "O jogador " + j.nome + " tem " + linha[2] + " bonecos na casa " + linha[0];
-                                        j.posicao.Add(Convert.ToInt32(linha[0]));
-                                
+                                textoExibido = "O jogador " + j.nome + " tem " + linha[2] + " pirata(s) na casa " + linha[0];
+                               
+                                j.posicao.Add(Convert.ToInt32(linha[0]));
+                               
                             }
                         }
 
@@ -235,21 +241,10 @@ namespace ProjetoCartagena
                 for (int i = 1; i < posicoes.Length - 2; i++)
                 {
                     string[] linha = posicoes[i].Split(',');
-
-                    foreach(Jogador j in partida.jogadores)
-                    {
-                        if (j.posicao.Contains(Convert.ToInt32(linha[0])))
-                        {
-                            textoExibido = "Na posiçao " + linha[0] + " tem um(a) " + editarNome(linha[1]) + " e o " + j.nome;
-                            break;
-                        }
-                        else
-                        {
-                            textoExibido = "Na posiçao " + linha[0] + " tem um(a) " + editarNome(linha[1]);
-                        }
-                    }
+                   
+                    textoExibido = "Na posiçao " + linha[0] + " tem um(a) " + editarNome(linha[1]);
                     lstExibeTabuleiro.Items.Add(textoExibido);
-                }
+                   }
             }
             catch (FormatException)
             {
