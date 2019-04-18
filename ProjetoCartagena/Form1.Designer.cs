@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cboListarPartidas = new System.Windows.Forms.ComboBox();
             this.lstPartidas = new System.Windows.Forms.ListBox();
@@ -66,6 +67,8 @@
             this.lstJogadores = new System.Windows.Forms.ListBox();
             this.lstVerificaVez = new System.Windows.Forms.ListBox();
             this.lstExibeTabuleiro = new System.Windows.Forms.ListBox();
+            this.VerificaSeAPartidaIniciou = new System.Windows.Forms.Timer(this.components);
+            this.VerificaVez = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +91,7 @@
             "Aberta",
             "Encerrada"});
             this.cboListarPartidas.Location = new System.Drawing.Point(122, 32);
-            this.cboListarPartidas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboListarPartidas.Margin = new System.Windows.Forms.Padding(2);
             this.cboListarPartidas.Name = "cboListarPartidas";
             this.cboListarPartidas.Size = new System.Drawing.Size(73, 21);
             this.cboListarPartidas.TabIndex = 1;
@@ -98,7 +101,7 @@
             // 
             this.lstPartidas.FormattingEnabled = true;
             this.lstPartidas.Location = new System.Drawing.Point(33, 70);
-            this.lstPartidas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstPartidas.Margin = new System.Windows.Forms.Padding(2);
             this.lstPartidas.Name = "lstPartidas";
             this.lstPartidas.Size = new System.Drawing.Size(240, 147);
             this.lstPartidas.TabIndex = 2;
@@ -126,7 +129,7 @@
             // txtNomePartida
             // 
             this.txtNomePartida.Location = new System.Drawing.Point(33, 251);
-            this.txtNomePartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomePartida.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomePartida.Name = "txtNomePartida";
             this.txtNomePartida.Size = new System.Drawing.Size(240, 20);
             this.txtNomePartida.TabIndex = 5;
@@ -134,7 +137,7 @@
             // txtSenhaPartida
             // 
             this.txtSenhaPartida.Location = new System.Drawing.Point(33, 300);
-            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaPartida.Name = "txtSenhaPartida";
             this.txtSenhaPartida.Size = new System.Drawing.Size(73, 20);
             this.txtSenhaPartida.TabIndex = 6;
@@ -143,7 +146,7 @@
             // btnCriarPartida
             // 
             this.btnCriarPartida.Location = new System.Drawing.Point(122, 297);
-            this.btnCriarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCriarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnCriarPartida.Name = "btnCriarPartida";
             this.btnCriarPartida.Size = new System.Drawing.Size(72, 24);
             this.btnCriarPartida.TabIndex = 7;
@@ -154,7 +157,7 @@
             // btnExibirHistorico
             // 
             this.btnExibirHistorico.Location = new System.Drawing.Point(33, 341);
-            this.btnExibirHistorico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExibirHistorico.Margin = new System.Windows.Forms.Padding(2);
             this.btnExibirHistorico.Name = "btnExibirHistorico";
             this.btnExibirHistorico.Size = new System.Drawing.Size(160, 20);
             this.btnExibirHistorico.TabIndex = 8;
@@ -165,8 +168,8 @@
             // lstHistoricoPartida
             // 
             this.lstHistoricoPartida.FormattingEnabled = true;
-            this.lstHistoricoPartida.Location = new System.Drawing.Point(0, 389);
-            this.lstHistoricoPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstHistoricoPartida.Location = new System.Drawing.Point(11, 376);
+            this.lstHistoricoPartida.Margin = new System.Windows.Forms.Padding(2);
             this.lstHistoricoPartida.Name = "lstHistoricoPartida";
             this.lstHistoricoPartida.Size = new System.Drawing.Size(498, 147);
             this.lstHistoricoPartida.TabIndex = 9;
@@ -174,7 +177,7 @@
             // btnListarJogadores
             // 
             this.btnListarJogadores.Location = new System.Drawing.Point(329, 30);
-            this.btnListarJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.btnListarJogadores.Name = "btnListarJogadores";
             this.btnListarJogadores.Size = new System.Drawing.Size(98, 23);
             this.btnListarJogadores.TabIndex = 10;
@@ -195,7 +198,7 @@
             // txtIdPartida
             // 
             this.txtIdPartida.Location = new System.Drawing.Point(454, 32);
-            this.txtIdPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdPartida.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdPartida.Name = "txtIdPartida";
             this.txtIdPartida.Size = new System.Drawing.Size(35, 20);
             this.txtIdPartida.TabIndex = 12;
@@ -213,7 +216,7 @@
             // txtNomeJogador
             // 
             this.txtNomeJogador.Location = new System.Drawing.Point(329, 252);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeJogador.Name = "txtNomeJogador";
             this.txtNomeJogador.Size = new System.Drawing.Size(159, 20);
             this.txtNomeJogador.TabIndex = 15;
@@ -221,7 +224,7 @@
             // btnEntrarPartida
             // 
             this.btnEntrarPartida.Location = new System.Drawing.Point(327, 290);
-            this.btnEntrarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEntrarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrarPartida.Name = "btnEntrarPartida";
             this.btnEntrarPartida.Size = new System.Drawing.Size(113, 24);
             this.btnEntrarPartida.TabIndex = 16;
@@ -252,7 +255,7 @@
             // txtIdJogador
             // 
             this.txtIdJogador.Location = new System.Drawing.Point(338, 342);
-            this.txtIdJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdJogador.MaxLength = 20;
             this.txtIdJogador.Name = "txtIdJogador";
             this.txtIdJogador.Size = new System.Drawing.Size(57, 20);
@@ -261,7 +264,7 @@
             // txtSenhaJogador
             // 
             this.txtSenhaJogador.Location = new System.Drawing.Point(413, 342);
-            this.txtSenhaJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaJogador.MaxLength = 10;
             this.txtSenhaJogador.Name = "txtSenhaJogador";
             this.txtSenhaJogador.Size = new System.Drawing.Size(76, 20);
@@ -281,7 +284,7 @@
             // 
             this.txtCorJogador.Enabled = false;
             this.txtCorJogador.Location = new System.Drawing.Point(228, 322);
-            this.txtCorJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorJogador.Name = "txtCorJogador";
             this.txtCorJogador.Size = new System.Drawing.Size(76, 20);
             this.txtCorJogador.TabIndex = 22;
@@ -289,7 +292,7 @@
             // btnIniciarPartida
             // 
             this.btnIniciarPartida.Location = new System.Drawing.Point(530, 27);
-            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(159, 22);
             this.btnIniciarPartida.TabIndex = 23;
@@ -320,7 +323,7 @@
             // txtPosicao
             // 
             this.txtPosicao.Location = new System.Drawing.Point(530, 101);
-            this.txtPosicao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPosicao.Margin = new System.Windows.Forms.Padding(2);
             this.txtPosicao.Name = "txtPosicao";
             this.txtPosicao.Size = new System.Drawing.Size(58, 20);
             this.txtPosicao.TabIndex = 26;
@@ -337,7 +340,7 @@
             "Tricornio",
             "Faca"});
             this.cboSimbolo.Location = new System.Drawing.Point(610, 101);
-            this.cboSimbolo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboSimbolo.Margin = new System.Windows.Forms.Padding(2);
             this.cboSimbolo.Name = "cboSimbolo";
             this.cboSimbolo.Size = new System.Drawing.Size(80, 21);
             this.cboSimbolo.TabIndex = 27;
@@ -345,7 +348,7 @@
             // btnJogarFrente
             // 
             this.btnJogarFrente.Location = new System.Drawing.Point(530, 141);
-            this.btnJogarFrente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogarFrente.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogarFrente.Name = "btnJogarFrente";
             this.btnJogarFrente.Size = new System.Drawing.Size(66, 67);
             this.btnJogarFrente.TabIndex = 28;
@@ -356,7 +359,7 @@
             // btnJogarTras
             // 
             this.btnJogarTras.Location = new System.Drawing.Point(623, 141);
-            this.btnJogarTras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogarTras.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogarTras.Name = "btnJogarTras";
             this.btnJogarTras.Size = new System.Drawing.Size(65, 67);
             this.btnJogarTras.TabIndex = 29;
@@ -367,7 +370,7 @@
             // btnPularJogador
             // 
             this.btnPularJogador.Location = new System.Drawing.Point(530, 227);
-            this.btnPularJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPularJogador.Margin = new System.Windows.Forms.Padding(2);
             this.btnPularJogador.Name = "btnPularJogador";
             this.btnPularJogador.Size = new System.Drawing.Size(158, 24);
             this.btnPularJogador.TabIndex = 30;
@@ -378,7 +381,7 @@
             // btnExibirMao
             // 
             this.btnExibirMao.Location = new System.Drawing.Point(530, 279);
-            this.btnExibirMao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExibirMao.Margin = new System.Windows.Forms.Padding(2);
             this.btnExibirMao.Name = "btnExibirMao";
             this.btnExibirMao.Size = new System.Drawing.Size(158, 24);
             this.btnExibirMao.TabIndex = 31;
@@ -390,7 +393,7 @@
             // 
             this.lstMaoJogador.FormattingEnabled = true;
             this.lstMaoJogador.Location = new System.Drawing.Point(530, 322);
-            this.lstMaoJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstMaoJogador.Margin = new System.Windows.Forms.Padding(2);
             this.lstMaoJogador.Name = "lstMaoJogador";
             this.lstMaoJogador.Size = new System.Drawing.Size(159, 186);
             this.lstMaoJogador.TabIndex = 32;
@@ -398,7 +401,7 @@
             // btnVerificarVez
             // 
             this.btnVerificarVez.Location = new System.Drawing.Point(724, 20);
-            this.btnVerificarVez.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerificarVez.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerificarVez.Name = "btnVerificarVez";
             this.btnVerificarVez.Size = new System.Drawing.Size(158, 24);
             this.btnVerificarVez.TabIndex = 33;
@@ -409,7 +412,7 @@
             // btnExibirTabuleiro
             // 
             this.btnExibirTabuleiro.Location = new System.Drawing.Point(1023, 20);
-            this.btnExibirTabuleiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExibirTabuleiro.Margin = new System.Windows.Forms.Padding(2);
             this.btnExibirTabuleiro.Name = "btnExibirTabuleiro";
             this.btnExibirTabuleiro.Size = new System.Drawing.Size(158, 24);
             this.btnExibirTabuleiro.TabIndex = 35;
@@ -431,7 +434,7 @@
             // 
             this.lstJogadores.FormattingEnabled = true;
             this.lstJogadores.Location = new System.Drawing.Point(327, 70);
-            this.lstJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.lstJogadores.Name = "lstJogadores";
             this.lstJogadores.Size = new System.Drawing.Size(159, 147);
             this.lstJogadores.TabIndex = 13;
@@ -440,20 +443,29 @@
             // 
             this.lstVerificaVez.FormattingEnabled = true;
             this.lstVerificaVez.Location = new System.Drawing.Point(724, 62);
-            this.lstVerificaVez.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstVerificaVez.Margin = new System.Windows.Forms.Padding(2);
             this.lstVerificaVez.Name = "lstVerificaVez";
             this.lstVerificaVez.Size = new System.Drawing.Size(253, 446);
             this.lstVerificaVez.TabIndex = 38;
-            this.lstVerificaVez.SelectedIndexChanged += new System.EventHandler(this.lstVerificaVez_SelectedIndexChanged);
             // 
             // lstExibeTabuleiro
             // 
             this.lstExibeTabuleiro.FormattingEnabled = true;
             this.lstExibeTabuleiro.Location = new System.Drawing.Point(1023, 62);
-            this.lstExibeTabuleiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstExibeTabuleiro.Margin = new System.Windows.Forms.Padding(2);
             this.lstExibeTabuleiro.Name = "lstExibeTabuleiro";
             this.lstExibeTabuleiro.Size = new System.Drawing.Size(316, 446);
             this.lstExibeTabuleiro.TabIndex = 39;
+            // 
+            // VerificaSeAPartidaIniciou
+            // 
+            this.VerificaSeAPartidaIniciou.Interval = 2000;
+            this.VerificaSeAPartidaIniciou.Tick += new System.EventHandler(this.VerificaSeAPartidaIniciou_Tick);
+            // 
+            // VerificaVez
+            // 
+            this.VerificaVez.Interval = 2000;
+            this.VerificaVez.Tick += new System.EventHandler(this.VerificaVez_Tick);
             // 
             // Form1
             // 
@@ -499,7 +511,7 @@
             this.Controls.Add(this.lstPartidas);
             this.Controls.Add(this.cboListarPartidas);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Cartagena";
             this.ResumeLayout(false);
@@ -547,6 +559,8 @@
         private System.Windows.Forms.ListBox lstJogadores;
         private System.Windows.Forms.ListBox lstVerificaVez;
         private System.Windows.Forms.ListBox lstExibeTabuleiro;
+        private System.Windows.Forms.Timer VerificaSeAPartidaIniciou;
+        private System.Windows.Forms.Timer VerificaVez;
     }
 }
 

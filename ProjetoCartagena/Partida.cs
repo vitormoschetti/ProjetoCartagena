@@ -17,7 +17,6 @@ namespace ProjetoCartagena
         }
         public Partida()
         {
-
             jogadores = new List<Jogador>();
         }
 
@@ -25,8 +24,7 @@ namespace ProjetoCartagena
         public int id { get; set; }
         public string nome { get; set; }
         public string senha { get; set; }
-        public Jogador jogadorVez { get; set; }
         public string historico { get; set; }
-        public string tabuleiro { get; set; }
+
     }
 }

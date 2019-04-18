@@ -54,3 +54,15 @@ C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\De
 C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
 C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
 C:\Users\vitor.akmoschetti\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.csprojAssemblyReference.cache
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.Form1.resources
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.Properties.Resources.resources
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.GenerateResource.cache
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CoreCompileInputs.cache
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.pdb
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe.config
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\bin\Debug\ProjetoCartagena.exe
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\bin\Debug\ProjetoCartagena.pdb
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.csproj.CopyComplete
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\obj\Debug\ProjetoCartagena.exe
+C:\Users\ygor.kspinto\Desktop\ProjetoCartagena-ygor\ProjetoCartagena\bin\Debug\CartagenaServer.dll
